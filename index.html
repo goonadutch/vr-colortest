@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>SRP</title>
+	<meta name="description" content="Basic A-Frame Scene">
+	<script src="./aframe.js"></script>
+	<script src="./extras.min.js"></script>
+</head>
+
+<body>
+	<audio id="correctSound" src="correct.mp3"></audio>
+	<audio id="noobSound" src="noob.mp3"></audio>
+	<audio id="backgroundPlayback" data-audioType="background" src="audio.mp3" autoplay></audio>
+
+
+
+
+	<a-scene renderer="antialias: false;">
+		<a-entity id="anchor" position="-0.9770850026232069 1.8147917616545972 19.598755523855985" rotation="0 0 0" movement-controls="fly: true">
+			<a-entity id="superView" camera="" look-controls="" wasd-controls="" rotation-reader="" position=""
+				rotation="4.812845479098918 -70.01544256498664 0" data-aframe-inspector-original-camera="">
+
+				<a-entity position="0 0 -3" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+					material="color: cyan; shader: flat" cursor="fuse: true" raycaster="">
+
+					<a-animation begin="click" easing="ease-in" attribute="scale" fill="forwards" from="0.2 0.2 0.2"
+						to="1 1 1" dur="150"></a-animation>
+
+					<a-animation begin="fusing" easing="ease-in" attribute="scale" fill="backwards" from="1 1 1"
+						to="0.2 0.2 0.2" dur="750"></a-animation>
+
+				</a-entity>
+			</a-entity>
+		</a-entity>
+
+		<!-- //this  is the entry position
+		<a-entity camera="" look-controls="" wasd-controls="acceleration: 7" position="-0.89108 1.93357 18.109"
+			rotation="" data-aframe-inspector-original-camera=""></a-entity>-->
+		
+
+
+		<!-- ------------------------------------------------------------------------------------------------- -->
+		
+		<!-- this is the position of market -->	
+		<!-- <a-entity id="market" gltf-model="models/stall.glb" position="14.64132 1.54807 -2.67222" scale="0.95 0.95 0.95" animation="" rotation="0 270 0"></a-entity>		 -->
+		
+		<!-- this is the position of merchant -->
+		<!-- <a-entity id="merchant" gltf-model="models/merchant.glb" position="12.50684 1.56705 -1.56124" scale="0.015 0.017 0.017" animation-mixer="" animation="" rotation="0 -135 0" visible=""></a-entity> -->
+		
+		<!-- this is the position of the eagle -->
+		<!-- <a-entity id="eagle" gltf-model="models/eagle.glb" position="3.6626 13.85087 0.53004" scale="" animation="" animation-mixer="" rotation="0 45 0"></a-entity>		 -->
+		
+		<!-- this is the position of the farmer -->
+		<!-- <a-entity id="farmer" gltf-model="models/farmer.glb" position="-12.43226 9.82807 -2.78595" scale="0.2 0.2 0.2" animation="" rotation="0 100 0" visible=""></a-entity> -->
+		
+		<!-- this is the position of the shower -->
+		<!-- <a-entity id="shower" gltf-model="models/shower.glb" position="4.09068 1.52399 -17.67442" scale="0.007 0.007 0.007" animation="" rotation="" visible="" material="vertexColors: face" reflection=""></a-entity>		 -->
+		
+		<!-- this is the position of the cart -->
+		<!-- <a-entity id="cart" gltf-model="models/cart.glb" position="-4.09378 1.74356 16.626" scale="0.003 0.003 0.003" rotation="0 180 0"></a-entity> -->
+
+		<!-- this is the position of the guard -->
+		<!-- <a-entity id="guard" gltf-model="models/guard.glb" position="-1.50238 6.58887 14.31584" scale="0.5 0.5 0.5" animation="" animation-mixer="" rotation="0 360 0" visible=""></a-entity>		 -->
+		
+		<!-- this is the island position -->
+		<a-entity gltf-model="models/island.glb" position="0.01471 1.55838 0.213" scale="30 30 30"animation=""></a-entity>
+		
+		<!-- this is the stable position -->
+		<!-- <a-entity id="stable" gltf-model="models/stable.glb" position="-5.45534 1.55838 11.99225" scale="0.5 0.5 0.3" animation="" rotation="0 180 0"></a-entity> -->
+		
+		<!-- this is the horse position -->
+		<!-- <a-entity id="horse" gltf-model="models/horse.glb" position="-5.2969 1.56268 11.66469" scale="0.4 0.4 0.4" animation-mixer="" rotation="0 90 0"></a-entity> -->
+		
+		<!-- this is the hay position -->
+		<!-- <a-entity id="hay" gltf-model="models/hay.glb" position="-4.53859 1.56268 12.36159" scale="0.3 0.3 0.2" rotation="0 90 0"></a-entity> -->
+		
+		<!-- this is the bucket position -->
+		<!-- <a-entity id="bucket" gltf-model="models/bucket.glb" position="-4.45218 1.56268 10.60931" scale="0.3 0.3 0.2" rotation="0 90 0"></a-entity> -->
+		
+		<!-- this is the horse1 position -->
+		<!-- <a-entity id="horse1" gltf-model="/models/horse1.glb" position="-5.37372 1.56268 10.74759" scale="0.4 0.4 0.4" animation-mixer="" rotation="0 90 0"></a-entity> -->
+
+		<!-- this is the horse2 position -->
+		<!-- <a-entity id="horse2" gltf-model="/models/horse2.glb" position="-5.20323 1.56268 12.40991" scale="0.4 0.4 0.4" animation-mixer="" rotation="0 90 0"></a-entity> -->
+		
+		<!-- ------------------------------------------------------------------------------------------------------ -->
+		
+
+
+		<!-- animation of horse1 -->
+		<a-asset-item id="horse1" src="/models/horse1.glb">
+			<a-animation attribute="rotation" begin="mouseenter" end="click" dur="1000" to="0 360 0"
+				repeat="indefinite">
+			</a-animation>
+		</a-asset-item>
+
+		<!-- animation of horse2 -->
+		<a-asset-item id="horse2" src="/models/horse2.glb">
+			<a-animation attribute="rotation" begin="mouseenter" end="click" dur="1000" to="0 360 0"
+				repeat="indefinite">
+			</a-animation>
+		</a-asset-item>
+		
+		<!-- animation of horse -->
+		<a-asset-item id="horse" src="/models/horse.glb">
+			<a-animation attribute="rotation" begin="mouseenter" end="click" dur="1000" to="0 360 0"
+				repeat="indefinite">
+			</a-animation>
+		</a-asset-item>
+
+		<!-- animation of the eagle -->
+		<a-asset-item id="eagle" src="/models/eagle.glb">
+			<a-animation attribute="rotation" begin="mouseenter" end="click" dur="1000" to="0 360 0"
+				repeat="indefinite">
+			</a-animation>
+		</a-asset-item>
+
+
+		<!-- animation of the guard -->
+		<a-asset-item id="guard" src="/models/guard.glb">
+			<a-animation attribute="rotation" begin="mouseenter" end="click" dur="1000" to="0 360 0"
+				repeat="indefinite">
+			</a-animation>
+		</a-asset-item>
+
+		<!-- animation of the seller -->
+		<a-asset-item id="guard" src="/models/merchant.glb">
+			<a-animation attribute="rotation" begin="mouseenter" end="click" dur="1000" to="0 360 0"
+				repeat="indefinite">
+			</a-animation>
+		</a-asset-item>
+		
+	
+		<!--
+			//this is the tree location
+			<a-entity camera="" look-controls="" wasd-controls="acceleration: 7" position="13.091 5.4009 -14.30609" 
+			rotation="" data-aframe-inspector-original-camera=""></a-entity>-->
+		
+		
+		
+		<!-- ------------------------------------------------------------------------------------------------------- -->
+		
+		
+		<a-circle class="redCircle" radius="0.055" color="red" position="11.88397 5.03033 -17.182" material=""
+			geometry="" visible=""></a-circle>
+		<!-- <a-circle class="redCircle" radius="0.055" color="red" position="11.87701 5.79598 -17.182" material="" 
+			geometry="" visible="false"></a-circle> -->
+		<a-circle class="redCircle" radius="0.055" color="red" position="11.4517 5.578 -17.182" material="" geometry=""
+			visible=""></a-circle>
+		<a-circle class="redCircle" radius="0.055" color="red" position="11.36197 6.378 -17.18166" material="" 
+			geometry="" visible=""></a-circle>
+		<a-circle class="redCircle" radius="0.055" color="red" position="11.57338 6.378 -17.18166" material="" 
+			geometry="" visible=""></a-circle>
+		<a-circle class="redCircle" radius="0.055" color="red" position="11.46652 5.978 -17.18166" material=""
+			geometry="" visible=""></a-circle>
+
+		<a-circle class="greenCircle" radius="0.05" color="#2E8B57" position="12.06503 4.988 -17.18166" material=""
+			geometry="" visible=""></a-circle>
+		<a-circle class="greenCircle" radius="0.05" color="#2E8B57" position="11.23867 5.188 -17.18166" material=""
+			geometry="" visible=""></a-circle>
+		<a-circle class="greenCircle" radius="0.05" color="#2E8B57" position="11.59389 5.388 -17.18166" material=""
+			geometry="" visible=""></a-circle>
+		<a-circle class="greenCircle" radius="0.05" color="#2E8B57" position="11.38099 6.11063 -17.18166" material="" 
+			geometry="" visible=""></a-circle>
+		<a-circle class="greenCircle" radius="0.05" color="#2E8B57" position="11.85188 5.3778 -17.18166" material=""
+			geometry="" visible=""></a-circle>
+		
+		<!-- ------------------------------------------------------------------------------------------------  -->
+
+		<a-sky src="test1.jpg"></a-sky>
+
+		<!-- import the background image -->
+		<a-asset-item id="background" src="bg.png"></a-asset-item>
+		<a-image id="backgroundImage" src="#background" position="5.483 7.94 11.658" width="20" height="20" visible="false" material="" geometry="" scale="0.1 0.1 0.1" rotation="0 -40 0"></a-image>
+
+		<!-- Import the image welcome.png -->
+		<a-asset-item id="welcome" src="welcome.png"></a-asset-item>
+		<a-image id="welcomeImage" src="#welcome" position="-0.99731 2.82216 16.57" width="2" height="2" visible="" material="" geometry="" scale="1.2 0.83 1"></a-image>
+		
+		<!-- Import the level1.png -->
+		<a-asset-item id="level1" src="level_1.png"></a-asset-item>	
+		<a-image id="level1Image" src="#level1" position="-0.99731 2.82216 16.57" visible = "false" width="2" height="2" visible="" material="" geometry="" scale="1.2 0.83 1"></a-image>
+
+		<!-- import the level1 result -->
+		<a-asset-item id="result" src="arch.png"></a-asset-item>	
+		<a-image id="resultImage" src="#result" position="13.47491 4.8879 -16.62886" visible="false" width="2" height="2" material="" geometry="" scale="1.2 0.83 1" rotation="0 -10 0"></a-image>
+
+		<!-- import the level2 image -->
+		<a-asset-item id="level2" src="level_2.png"></a-asset-item>	
+		<a-image id="level2Image" src="#level2" visible="false" position="13.47491 4.8879 -16.62886" width="2" height="2" material="" geometry="" scale="1.2 0.83 1" rotation="0 -10 0"></a-image>
+		
+		<!-- import the sampletest image -->
+		<a-asset-item id="sampletest" src="sampletest.png"></a-asset-item>
+		<a-image id="sampletestImage" src="#sampletest" position="5.483 7.94 11.658" visible="false" width="2" height="2" material="" geometry="" scale="1.2 0.83 1" rotation="0 -40 0"></a-image>		
+
+		<!-- import the demo image -->
+		<a-asset-item id="demo" src="demo.png"></a-asset-item>
+		<a-image id="demoImage" src="#demo" position="5.483 7.94 11.658" visible="false" width="2" height="2" material="" geometry="" scale="1 0.83 1" rotation="0 -40 0"></a-image>
+
+		<!-- import the confetti image -->
+		<a-asset-item id="confetti" src="confetti.png"></a-asset-item>
+		<a-image id="confettiImage" src="#confetti" position="5.483 7.94 11.658" visible="false" width="2" height="2" material="" geometry="" scale="1 0.83 1" rotation="0 -40 0"></a-image>
+
+		<!-- ------------------------------------------------------------------------------------------------ -->
+		
+		<!-- position of the play button -->
+		<a-box id="playButton" color=#bcb8b6 visible = "false" depth="0.02" height="0.2" width="0.6" position="-0.99055 2.49195 16.5864" material=""
+			geometry=""></a-box>
+		<a-entity id="playText" position="-0.99055 2.48195 16.6211" visible="false" scale="" text="value: PLAY; color: #000000; align: center; width: 2.26; wrapCount: 40.14" width:="" 3.74;="" class="" raycaster-target="" material="emissive: #000000">
+			</a-entity>
+
+		<!-- position of the getstarted button -->
+		<a-box id="welcomebox" color="white" depth="0.001" height="0.2" width="0.7" position="-0.99055 2.22195 16.5864" material="" geometry="depth: 0"></a-box>
+		<a-entity id="welcometext" position="-0.99028 2.23907 16.5898" text="value: GET STARTED; color: #000000; align: center; width: 2.26; wrapCount: 40.14" 
+		width:="" 3.74;="" class="" raycaster-target="" material="emissive: #000000"></a-entity>
+		
+		<!-- position of done button -->
+		<a-box id="doneButton" color="white" depth="0.001" height="0.2" width="0.7" position="11.46549 4.38243 -17.10358" material="" text="value: DONE; color: #000000; align: center; width: 2.26" geometry="depth: 0"></a-box>		
+
+		<!-- position of level2 play button -->
+		<a-box id="level2Button" color="white" visible="true" depth="0.001" height="0.2" width="0.7" position="13.60958 4.55764 -16.5996" material="" text="value: PLAY; color: #000000; align: center; width: 2.26" geometry="depth: 0" rotation="0 -10 0"></a-box>		
+		
+		<!-- position of the sample button -->
+		<a-box id="sampleButton" color="white" depth="0.001" height="0.2" width="0.7" visible = "false" position="5.28604 7.58423 11.86568" text="value: START; color: #000000; align: center; width: 2.26" material="" geometry="depth: 0" visible="" rotation="0 -40 0"></a-box>
+		
+       <!-- ------------------------------------------------------------------------------------------- -->
+
+       <!-- position of demobox -->
+	   <a-box id="demoBox" color="white" visible = "false" depth="0.001" height="0.2" width="0.4" position="4.68604 6.98423 11.86568" text="value: 12; color: #000000; align: center; width: 2.26" material="" geometry="depth: 0" visible="" rotation="0 -40 0"></a-box>
+	   <a-box id="demoBox2" color="white" visible="false" depth="0.001" height="0.2" width="0.4" position="5.41707 6.98423 12.59327" text="value: 22; color: #000000; align: center; width: 2.26" material="" geometry="depth: 0" rotation="0 -40 0"></a-box>
+	   <a-box id="startIshi" color="white" visible="false" depth="0.01" height="0.2" width="0.7" position="5.10092 6.98423 12.08239" text="value: START; color: #000000; align: center; width: 2.26" material="" geometry="depth: 0" rotation="0 -40 0"></a-box>
+
+	   <!-- ------------------------------------------------------------------------------------------------ -->
+
+	   <!-- position of the background for ishihara test -->
+	   <!-- <a-box id="bgIshi" color="white" visible="" depth="0.001" height="0.9" width="1.3" position="-0.41515 4.01753 4.2513" material="" geometry="depth: 0" rotation="" scale="2.05 1.92 1"></a-box> -->
+	
+	   
+	   <!-- -------------------------------------------------------------------------------------------------- -->
+		
+	   <!-- test 1 -->	  
+	   <a-image data-current="1" id="optionImage" src="/test/one.png" position="-0.41515 4.01753 4.2513" visible="" width="1.3" height="0.9" material="" geometry="depth: 0" rotation="" scale="1 0.93 1"></a-image>
+	   <a-box id="optionOne" data-current="1" data-value="23" color="white" visible="" depth="0.001" height="0.2" width="0.4" position="-1.22738 3.38204 4.25573" material="" text="value: 23; color: #000000; align: center; width: 2.26" geometry="depth: 0" rotation="" scale="1.83001 0.95001 0.00001"></a-box>
+	   <a-box id="optionTwo" data-current="1" data-value="21" color="white" visible="" depth="0.001" height="0.2" width="0.4" position="-0.42578 3.38204 4.25573" material="" text="value: 21; color: #000000; align: center; width: 2.26" geometry="depth: 0" rotation="" scale="1.83001 0.95001 0.00001"></a-box>
+	   <a-box id="optionThree" data-current="1" data-value="45" color="white" visible="" depth="0.001" height="0.2" width="0.4" position="0.40982 3.38204 4.25573" material="" text="value: 45; color: #000000; align: center; width: 2.26" geometry="depth: 0" rotation="" scale="1.83001 0.95001 0.00001"></a-box>
+
+	   <!-- test 2 -->
+
+		<script>																						
+			
+			let redCircles = document.querySelectorAll(".redCircle");
+			let greenCircles = document.querySelectorAll(".greenCircle");
+
+			let correctAudio = document.querySelector('#correctSound')
+			let wrongAudio = document.querySelector('#noobSound')
+
+			let redCount = 0;
+			let greenCount = 5;
+
+			let resultImage = document.getElementById("resultImage")
+
+			
+			
+
+			function setupListeners(circleArray, notificationSound) {
+				circleArray.forEach(circle => {
+					circle.addEventListener('click', () => {
+						circle.setAttribute('visible', false);
+						notificationSound.play();
+
+						if(circle.attributes.color.value == "red") {
+							console.log("Clicked Red stuff")
+							redCount += 1
+						} 
+
+						
+					});
+				})
+			}
+
+			setupListeners(redCircles, correctAudio)
+			setupListeners(greenCircles, wrongAudio)
+
+			
+
+
+			let camera = document.querySelector("#anchor")
+
+			function moveCamera(position, duration = 1000) {
+				camera.setAttribute('animation__moveCamera', {
+					property: 'position',
+					dur: 1000,
+					to: position,
+					dur: duration
+				})
+			}
+
+			
+			function rotateCamera(rotation, duration = 1000) {
+                camera.setAttribute('animation__rotateCamera', {
+                    property: 'rotation',
+                    dur: 500,
+                    to: rotation,
+                    dur: duration
+                })
+            }
+
+			
+
+			let treePosition = {
+				x: 11.0029,
+				y: 4.8879,
+				z: -13.809
+			}
+			
+			let samplePostion = {
+				x: 2.502,
+				y: 8.089,
+				z: 14.316
+			}
+			
+			let ishiPosition = {
+				x: -0.194,
+				y: 3.353,
+				z: 7.807
+			}
+			
+
+			
+			
+
+			
+			
+
+
+
+			let playButton = document.getElementById("playButton")
+			playButton.addEventListener("click", () => {
+				level1Image.setAttribute('visible', false);
+				playButton.setAttribute('visible', false);
+				playText.setAttribute('visible', false);
+				moveCamera(treePosition)
+			})
+
+
+			let doneButton = document.getElementById("doneButton")
+			doneButton.addEventListener("click", () => {
+				doneButton.setAttribute('visible', false);
+				console.log(redCount)
+				if(redCount == 5){
+					level2Image.setAttribute('visible', true);
+					level2Button.setAttribute('visible', true);
+				}else{
+					resultImage.setAttribute('visible', true);
+				}
+			})
+
+	
+			let welcomeBox = document.getElementById("welcomebox")
+			welcomeBox.addEventListener("click", () => {
+				welcomebox.setAttribute('visible', false);
+				welcomeImage.setAttribute('visible', false);
+				welcometext.setAttribute('visible', false);
+				level1Image.setAttribute('visible', true);
+				playButton.setAttribute('visible', true);
+				playText.setAttribute('visible', true);
+			})
+			
+
+			let level2Button = document.getElementById("level2Button")
+			level2Button.addEventListener("click", () => {
+				console.log("level2 button clicked")
+				level2Image.setAttribute('visible', false);
+				level2Button.setAttribute('visible', false);
+				sampletestImage.setAttribute('visible', true);
+				sampleButton.setAttribute('visible', true);
+				moveCamera(samplePostion)
+			})
+
+			let sampleButton = document.getElementById("sampleButton")
+			sampleButton.addEventListener("click", () => {
+				console.log("sample button clicked")
+				backgroundImage.setAttribute('visible', false);
+				sampletestImage.setAttribute('visible', false);
+				sampleButton.setAttribute('visible', false);
+				demoImage.setAttribute('visible', true);
+				demoBox.setAttribute('visible', true);
+				demoBox2.setAttribute('visible', true);				
+			})
+
+			let demoBox = document.getElementById("demoBox")
+			demoBox.addEventListener("click", () => {
+				console.log("demo box clicked")
+				demoImage.setAttribute('visible', false);
+				demoBox.setAttribute('visible', false);
+				demoBox2.setAttribute('visible', false);
+				confettiImage.setAttribute('visible', true);
+				startIshi.setAttribute('visible', true);
+			})
+
+			let startIshi = document.getElementById("startIshi")
+			startIshi.addEventListener("click", () => {
+				console.log("start ishi clicked")
+				confettiImage.setAttribute('visible', false);
+				sampletestImage.setAttribute('visible', false);
+				sampleButton.setAttribute('visible', false);
+				startIshi.setAttribute('visible', false);
+				moveCamera(ishiPosition)
+				rotateCamera({x: 0, y: 50, z: 0})
+			})
+
+		</script>
+
+		<script src="./app.js"></script>
+
+		<!-- <div class="a-loader-title" style="display: none;">Basic A-Frame Scene</div> -->
+
+
+	</a-scene>
+</body>
+
+</html>
