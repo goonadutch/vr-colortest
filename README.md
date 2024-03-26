@@ -9,3 +9,5 @@ This project aims to detect color blindness using WebXR technology combined with
 **Stage 1:**  Users are presented with a virtual environment featuring a tree with red and green apples. They are instructed to select only the red apples. Failure to do so prompts users to seek medical advice.
 
 **Stage 2:**  If users successfully identify the red apples, they proceed to the Ishihara test plates. These plates contain numbers hidden within colored patterns, and users are asked to identify them.  The choices made by users determine the type of color blindness they may have.
+
+![image](https://github.com/goonadutch/vr-colortest/assets/96746217/5b1e290f-172f-499f-bc3d-b9ffbf2593d1)
