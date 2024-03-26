@@ -1,1 +1,1 @@
-This is a VR experience to detect the type of colour-blindness
+Virtual reality-based color blindness assessment providing accurate results, empowering easy self-detection without specialized equipment or clinic visits.
